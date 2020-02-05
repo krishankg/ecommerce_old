@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Product | List {% endblock %}
+{% block content %}
+<h1 class="text-center">List of Products</h1>
+ <div class="container">
+    <div class="row">
+{{ name }}
+        {% for obj in objects %}
+    <div class="col-lg-3 col-md-6 col-sm-3">
+      <!-- <div class="col col-sm-4 col-md-6 col-lg-4"> -->
+        <div class="card p-3 mb-5 bg-white rounded">
+          {% if obj.image %}
+           <a href="{% url 'products:detail' obj.slug%}"> <img src="{{ obj.image.url }}" width="200px" height="200px" class="card-img-top" alt="photo"> </a>
+          {% endif %}
+            <div class="card-body">
+                <dir class="container"/>
+              <h5 class="card-title">{{ obj.name }}</h5>
+              </div>
+              </div>
+            </div>
+         </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a href="https://google.com/">Google</a>
+  </div>
+ {% endblock %}
